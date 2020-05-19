@@ -118,4 +118,42 @@
   volume    = {3},
 }
 
+@Article{suzuki1985topological,
+  author    = {Suzuki, Satoshi and others},
+  title     = {Topological structural analysis of digitized binary images by border following},
+  journal   = {Computer vision, graphics, and image processing},
+  year      = {1985},
+  volume    = {30},
+  number    = {1},
+  pages     = {32--46},
+  publisher = {Elsevier},
+}
+
+@Misc{websiteforimageheart,
+  title = {Vector Stock: Anatomy of the human heart vector image},
+  url   = {https://www.vectorstock.com/royalty-free-vector/anatomy-of-the-human-heart-vector-19856683},
+}
+
+@Article{coogan2013computational,
+  author    = {Coogan, Jessica S and Humphrey, Jay D and Figueroa, C Alberto},
+  title     = {Computational simulations of hemodynamic changes within thoracic, coronary, and cerebral arteries following early wall remodeling in response to distal aortic coarctation},
+  journal   = {Biomechanics and modeling in mechanobiology},
+  year      = {2013},
+  volume    = {12},
+  number    = {1},
+  pages     = {79--93},
+  publisher = {Springer},
+}
+
+@Article{lynch2006automatic,
+  author    = {Lynch, Michael and Ghita, Ovidiu and Whelan, Paul F},
+  title     = {Automatic segmentation of the left ventricle cavity and myocardium in MRI data},
+  journal   = {Computers in biology and medicine},
+  year      = {2006},
+  volume    = {36},
+  number    = {4},
+  pages     = {389--407},
+  publisher = {Elsevier},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

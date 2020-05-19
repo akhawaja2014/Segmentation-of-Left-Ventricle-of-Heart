@@ -1420,7 +1420,7 @@ name "fig:Clustering-of-the"
 
 \end_inset
 
-Clustering of the original image as shown in figure 
+Clustering of the original image as shown in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:On-the-left,"
@@ -1660,14 +1660,7 @@ status open
 \begin_layout Plain Layout
 Final segmented image.
  The left ventricle is indicated by green contour.
- The original image is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:On-the-left,"
-
-\end_inset
-
-
+ T
 \end_layout
 
 \end_inset

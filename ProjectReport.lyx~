@@ -28,7 +28,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement h
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -44,8 +44,8 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine natbib
-\cite_engine_type authoryear
+\cite_engine basic
+\cite_engine_type default
 \biblio_style plain
 \use_bibtopic false
 \use_indices false
@@ -300,7 +300,105 @@ We went through the algorithms and decided to use Hybrid Appoach for our
 \end_layout
 
 \begin_layout Section
+Anatomy of Heart
+\end_layout
+
+\begin_layout Standard
+The heart is made up of four chambers: two upper chambers known as the left
+ atrium and right atrium and two lower chambers called the left and right
+ ventricles.
+ These are shown in following figure .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename heart.PNG
+	lyxscale 40
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The left ventricle is longer and more conical in shape.
+ In short axis, the left ventricle appears circular in shape.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Methodology
+\end_layout
+
+\begin_layout Standard
+The first task was to identify the tasks in the project.
+ After we were done with identifying the tasks, we came to how they can
+ be implemented on python.
+ We studied and learned to use the needed libraries in python.
+ The libraries hae been given in Appendix A.
+ The following flowchart gives a very articulate work flow demonstration.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename methodology.PNG
+	lyxscale 60
+	scale 37.5
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -308,7 +406,12 @@ Development
 \end_layout
 
 \begin_layout Standard
-discuss algorithms
+In this section we will discuss the implementation of algorithm.
+ Python programming language was used for the implementation.
+ The methodology from figure was observed to complete the project.
+ We faced challenges in almost every stage but our resiliance and motivation
+ kept us going.
+ The following subsections take us step by step through the ladder of project.
 \end_layout
 
 \begin_layout Subsection
@@ -902,6 +1005,52 @@ The main goal of smoothing is to alleviate the complexity for subsequent
  .
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename original.PNG
+	scale 75
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename AdaptiveSmoothing.PNG
+	scale 75
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 K-Means Clustering
 \end_layout
@@ -911,15 +1060,7 @@ The smoothed images were then clustered using k-means algorithm proposed
  by Duda and Hart 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "hartigan1979algorithm"
-literal "false"
-
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "duda1973pattern"
+key "hartigan1979algorithm,duda1973pattern"
 literal "false"
 
 \end_inset
@@ -1011,7 +1152,46 @@ literal "false"
  .K-means Clustering is categorized as unsupervised learning, which means
  that it does not need any intervention by human in our project and leads
  way to automatic segmentation of Left Ventricle.
- The figure [] shows results after applying k-means clustering
+ The figure [] shows results after applying k-means clustering.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename clustering.PNG
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1019,7 +1199,43 @@ Detection of Region of Interest (ROI)
 \end_layout
 
 \begin_layout Standard
-discuss attach images
+It was a trickiest part of the project.
+ We tried a number of approaches to detect the region of interest, i.e the
+ region containing left ventricle and its nearby surroundings.
+ The approaches have been defined described briefly:
+\end_layout
+
+\begin_layout Subsubsection
+Hough Transform
+\end_layout
+
+\begin_layout Standard
+We know that the left ventricle can thought of as an approximation of circle.
+ Hough transform is used to detect circular features in an image.
+ We applied hough transform and detected ventricle.
+ With the centre of ventricle detected as centre of circle, we declared
+ the reasonable area around centre of circle as region of interest.
+ However this approach was not a great idea because:
+\end_layout
+
+\begin_layout Itemize
+Left ventricle is the only circular shape object in image, Many slices had
+ more than one circular object other than left ventricle which allowed it
+ hough transform to detect false left ventricle.
+\end_layout
+
+\begin_layout Itemize
+In some images / slices, left ventricle becomes too dark to be detected
+ as an object.
+\end_layout
+
+\begin_layout Itemize
+In some images / slices, the left ventricle is not near to circular shape.
+ so hough transform fails
+\end_layout
+
+\begin_layout Standard
+Based on these reasons, we decided to go for another approach.
 \end_layout
 
 \begin_layout Subsection
@@ -1027,7 +1243,156 @@ Segmentation of Left Ventricle
 \end_layout
 
 \begin_layout Standard
-algorithm discuss ppr
+A border following algorithm inspired by 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "suzuki1985topological"
+literal "false"
+
+\end_inset
+
+ was used to segment Left Ventricle.
+ Border following is one of the most important and popular technique in
+ segmentation of binary images.
+ .
+ It derives a sequence of the coordinates or the chain codes from the border
+ between a connected component of l-pixels
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Pixels with densities 1 are called the 1-pixel
+\end_layout
+
+\end_inset
+
+ (l-component)’ and a connected component of O-pixels
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Pixels with densities 0 are called the O-pixel
+\end_layout
+
+\end_inset
+
+ (background or hole).
+\end_layout
+
+\begin_layout Standard
+The basic idea of border following algorithm is simple.
+ It works on binary image and already produced binary image by 
+\begin_inset Formula $k=2$
+\end_inset
+
+ (2 clusters) with 
+\begin_inset Formula $k$
+\end_inset
+
+-means clustering.
+ The border following algorithm as illustrated in figure ][ sees th component
+ as 1 and background as 0.
+ When it moves through the pixel grid passing each pixel watching out their
+ intensity (0 or 1).
+ As soon as it observes a jump from O-Pixel to 1-Pixel, it memorizes the
+ pixel location and value.
+ After it memorizes
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+By memorize we mean it saves the pixel location in a vector
+\end_layout
+
+\end_inset
+
+ all the jumps i.e switching from O-Pixel to 1-Pixel and vice versa, It categoriz
+es the the border in number of objects depending whether the pixel locations
+ are connected to each other or they are sparsely located.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename borderfollowingAlgorithm.PNG
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The resulting segmented image is shown in figure [].
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename segmented.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1084,6 +1449,17 @@ LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "BibliographyDatabase"
 options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Appendix A
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Appendix-A"
 
 \end_inset
 
