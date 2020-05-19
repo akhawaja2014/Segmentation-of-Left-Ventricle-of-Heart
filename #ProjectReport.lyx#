@@ -921,8 +921,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
+<lyxtabular version="3" rows="10" columns="3">
 <features tabularvalignment="middle">
+<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
@@ -930,10 +931,16 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\boldsymbol{\tilde{\sigma}_{xy}^{2}(R)}$
+Parameter
+\end_layout
+
 \end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
 
-
+\begin_layout Plain Layout
+Value set
 \end_layout
 
 \end_inset
@@ -951,6 +958,18 @@ Indication
 </cell>
 </row>
 <row>
+<cell multirow="3" alignment="center" valignment="middle" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\boldsymbol{\tilde{\sigma}_{xy}^{2}(R)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -964,13 +983,22 @@ Large Value
 \begin_inset Text
 
 \begin_layout Plain Layout
-There is presence of significant feature
+presence of significant feature
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -984,7 +1012,237 @@ Small Value
 \begin_inset Text
 
 \begin_layout Plain Layout
-There aint any significant feature or significant edges found
+No significant feature or significant edges found
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+< 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\theta_{\sigma}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+usually it means noise
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+>
+\begin_inset Formula $\theta_{\sigma}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+it’s a feature
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Small value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fast smoothing and discontinuity reduction
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Large value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+slow smoothing 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+so that important features can be preserved
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Small value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+leads to better preservation of details
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Large value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+all discontinuities disappear
 \end_layout
 
 \end_inset
@@ -1004,7 +1262,7 @@ name "tab:Interpretation-of-Spatial"
 
 \end_inset
 
-Interpretation of Spatial normal variance results
+Interpretation of ch results
 \end_layout
 
 \end_inset
@@ -1194,7 +1452,18 @@ I_{xy}^{t+1}=I_{xy}^{t}+\eta_{xy}\frac{\Sigma_{(i,j)\in N_{xy}(1)/[(x,y)]}\eta_{
 \end_layout
 
 \begin_layout Standard
-here:
+here note that 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is a parameter whose value we set according to table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Interpretation-of-Spatial"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -1420,7 +1689,7 @@ name "fig:Clustering-of-the"
 
 \end_inset
 
-Clustering of the original image as shown in 
+Clustering of the original image as shown in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:On-the-left,"
@@ -1632,7 +1901,14 @@ The simple
 \end_layout
 
 \begin_layout Standard
-The resulting segmented image is shown in figure [].
+The resulting segmented image is shown in figure
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Final-segmented-image."
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1658,9 +1934,22 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Final-segmented-image."
+
+\end_inset
+
 Final segmented image.
  The left ventricle is indicated by green contour.
- T
+ The original image is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:On-the-left,"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

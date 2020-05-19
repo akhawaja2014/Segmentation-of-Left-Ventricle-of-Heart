@@ -79,7 +79,7 @@
 \begin_body
 
 \begin_layout Title
-Project : Automatic Segmentation of Left Ventricle
+An effecient automatic segmentation of left ventricle by hybrid approach
 \end_layout
 
 \begin_layout Author
@@ -195,11 +195,26 @@ Email :
 \end_layout
 
 \begin_layout Abstract
-Left Ventricle
+Left Ventricle is an integral part of the heart.
+ It pumps blood into the body.
+ Cardiovascular diseaes are quite common in modern world.
+ The health of the heart can be studied using left ventricle.
+ Most of the heart diseases can be diagnosed by retrieving important information
+ from systole and diastole operations of heart via effective medical imaging
+ analysis of Left Ventricle (LV).
+ The segmentation of Left Ventricle plays an important role in retrieving
+ the ejection fraction (a parameter which indicates the heart's health).
+ Since Magnetic Resonance Images (MRI) are noisy and not really perfect,
+ scientific community is always curious to find more effecient, reliable,
+ robust and more accurate segmentation methods to calculate ejection fraction.
+ In this research project, we use a novel hybrid approach for segmentation.
+ K-means, along with border following algorithm is used for segmentation.
+ The results are quite impressive and discussed in the last section.
 \end_layout
 
 \begin_layout Keywords
-K-means, Python,
+K-means, Python, Border Following Algorithm, Left Ventricle, Adaptive Smoothing,
+ Clustering, Hough Transform.
 \end_layout
 
 \begin_layout Section
@@ -267,7 +282,7 @@ name "fig:These-are-some"
 
 These are some methods / Algorithms used to segment left ventricle.
  Each of them have their own advantages and disadvatages.
- None of them is perfect
+ None of them is perfect.
 \end_layout
 
 \end_inset
@@ -290,9 +305,24 @@ We went through the algorithms and decided to use Hybrid Appoach for our
  In hybrid approach, we intend to use more than one approaches / algorithms
  to work simaltaneosly on the segmentation of the image.
  In this project we used mainly primarily K-Means algorithm inspired by
- [].
- Alongside, a border following algorithm inspired from [] was used to enhance
- segmentation results.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lynch2006automatic"
+literal "false"
+
+\end_inset
+
+.
+ Alongside, a border following algorithm inspired from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "suzuki1985topological"
+literal "false"
+
+\end_inset
+
+ was used to enhance segmentation results.
  The preproccessing was done with adaptive smoothing algorithm.
  Finally we optimized the performance of our algorithm by repeated experiments
  of using the algorithm with different datasets and setting the parameters
@@ -335,17 +365,99 @@ status open
 \begin_layout Plain Layout
 The left ventricle is longer and more conical in shape.
  In short axis, the left ventricle appears circular in shape.
+ The image is taken from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "websiteforimageheart"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The left ventricle is considered an important part of the cardiovascular
+ system.
+ It is thought off as a pump that supplies blood to the body.
+ The mass of the left ventricle, as estimated by magnetic resonance imaging,
+ averages 
+\begin_inset Formula $143g±38.4g$
+\end_inset
+
+, with a range of 
+\begin_inset Formula $87–224g$
+\end_inset
+
  
+\begin_inset CommandInset citation
+LatexCommand cite
+key "coogan2013computational"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
+
+\begin_layout Standard
+Another important thing to discuss are the two phases of the cardiac cycle.
+ They are called Systole and Diastole.
+ They occur as the heart beats, pumping blood through a system of blood
+ vessels that carry blood to every part of the body.
+ Systole occurs when the heart contracts to pump blood out, and diastole
+ occurs when the heart relaxes after contraction.
+\end_layout
+
+\begin_layout Subsection
+Ejection Fraction
+\end_layout
+
+\begin_layout Standard
+Ejection fraction (EF) refers to how well your left ventricle (or right
+ ventricle) pumps blood with each heart beat 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lynch2006automatic"
+literal "false"
+
+\end_inset
+
+.
+ The ejection fraction can be calculated as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathrm{EF}=\frac{V_{\mathrm{endo}}\left(t_{\mathrm{D}}\right)-V_{\mathrm{endo}}(t\mathrm{s})}{V_{\mathrm{endo}}\left(t_{\mathrm{D}}\right)}\label{eq:-9}
+\end{equation}
 
 \end_inset
 
 
 \end_layout
 
+\begin_layout Standard
+Here note that 
+\begin_inset Formula $V_{endo}$
 \end_inset
 
+ is the volume of the inner walls of the heart, 
+\begin_inset Formula $V_{endo}(t_{D})=max_{t}[V_{endo}(t)]$
+\end_inset
 
+ is the end-diastolic volume and
+\begin_inset Formula $V_{endo}(t_{S})=min_{t}[V_{endo}(t)]$
+\end_inset
+
+ is the end-systolic volume.
 \end_layout
 
 \begin_layout Section
@@ -354,11 +466,18 @@ Methodology
 
 \begin_layout Standard
 The first task was to identify the tasks in the project.
- After we were done with identifying the tasks, we came to how they can
- be implemented on python.
+ After we were done with identifying the tasks, we came to their implementation
+ on python.
  We studied and learned to use the needed libraries in python.
  The libraries hae been given in Appendix A.
- The following flowchart gives a very articulate work flow demonstration.
+ The following flowchart gives a very articulate work flow 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-flowchart-demonstrates"
+
+\end_inset
+
+ demonstration.
 \end_layout
 
 \begin_layout Standard
@@ -384,7 +503,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-flowchart-demonstrates"
 
+\end_inset
+
+The flowchart demonstrates work flow.
+ Neccessary iterations were done to find the optimal combination of all
+ algorithm parameters with the goal of acheiving the highest accuracy possible.
 \end_layout
 
 \end_inset
@@ -408,7 +535,14 @@ Development
 \begin_layout Standard
 In this section we will discuss the implementation of algorithm.
  Python programming language was used for the implementation.
- The methodology from figure was observed to complete the project.
+ The methodology from figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-flowchart-demonstrates"
+
+\end_inset
+
+ was observed to complete the project.
  We faced challenges in almost every stage but our resiliance and motivation
  kept us going.
  The following subsections take us step by step through the ladder of project.
@@ -421,10 +555,25 @@ Adaptive non linear smoothing
 \begin_layout Standard
 We considered Feature-Preserving Adaptive Smoothing Method (FPASM) for our
  project.
- The primary K-Means research [] that we were following took this algorithm
- from another research [].
+ The primary K-Means research 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lynch2006automatic"
+literal "false"
+
+\end_inset
+
+ that we were following took this algorithm from another research 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+.
  Adaptive smoothing is a class of typical nonlinear smoothing techniques
- that have been studied for many years.
+ that has been studied for many years.
 \end_layout
 
 \begin_layout Standard
@@ -433,7 +582,7 @@ The idea is to adapt pixel intensities to the local attributes of an image
  Note that in this algorithm there are two kind of discontinuities, Local
  and Contextual discontinuity.
  This novel approach joins these both discontinuities to preserve edges
- and at same time smooth images.
+ and at same time smooths images.
  It is brilliant method according to us.
 \end_layout
 
@@ -444,9 +593,17 @@ In order to measure local discontinuities, we define four detectors for
 \end_inset
 
  along four directions.
- These four These four directions are vertical (V), horizontal (H), diagonal
- (D), and counter-diagonal (C), respectively.
- Accordingly, four detectors are defined as
+ These four directions are vertical (V), horizontal (H), diagonal (D), and
+ counter-diagonal (C), respectively.
+ Accordingly, four detectors are defined as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -557,7 +714,15 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-With these diferences in mind, we define the local discontinuity as:
+With these diferences in mind, we define the local discontinuity as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -582,7 +747,15 @@ In order to detect contextual discontinuities, we use spatial variance to
 \begin_inset Formula $Nxy(R),$
 \end_inset
 
-as
+as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -618,7 +791,15 @@ Note that, here
 \begin_inset Formula $\mu_{xy}(R)$
 \end_inset
 
-, as
+, as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -637,7 +818,15 @@ and the spatial variance,
 \begin_inset Formula $\sigma_{xy}^{2}(R)$
 \end_inset
 
-, can be calculated as:
+, can be calculated as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -659,7 +848,15 @@ The normalized
 \begin_inset Formula $\tilde{\sigma}_{xy}^{2}(R)$
 \end_inset
 
- can be written as:
+ can be written as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -831,6 +1028,14 @@ So, these results reccomend us that the local attributes of a pixel with
 \begin_inset Formula $\tilde{\sigma}_{xy}^{2}(R)$
 \end_inset
 
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
 ;
 \end_layout
 
@@ -966,7 +1171,15 @@ noprefix "false"
 \begin_inset Formula $I_{xy}^{t}$
 \end_inset
 
-, where t is the iteration value.
+, where t is the iteration value 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1002,7 +1215,14 @@ here:
 The main goal of smoothing is to alleviate the complexity for subsequent
  processes in early vision.
  With this pre- processing, the results of our MRI image are shown in figure
- .
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:On-the-left,"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1034,7 +1254,17 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:On-the-left,"
 
+\end_inset
+
+On the left, is the original image.
+ On the right is the smoothed image.
+ We can clearly notice that the algorithm has blurred the details of object
+ but takes care of the edges.
+ This will help us in getting great accuracy for segmentation.
 \end_layout
 
 \end_inset
@@ -1152,7 +1382,14 @@ literal "false"
  .K-means Clustering is categorized as unsupervised learning, which means
  that it does not need any intervention by human in our project and leads
  way to automatic segmentation of Left Ventricle.
- The figure [] shows results after applying k-means clustering.
+ The figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Clustering-of-the"
+
+\end_inset
+
+ shows results after applying k-means clustering.
 \end_layout
 
 \begin_layout Standard
@@ -1177,7 +1414,29 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Clustering-of-the"
 
+\end_inset
+
+Clustering of the original image as shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:On-the-left,"
+
+\end_inset
+
+.
+ The image has been clustered using K means algorithm with 
+\begin_inset Formula $k=2$
+\end_inset
+
+, where 
+\begin_inset Formula $k$
+\end_inset
+
+ is the number of clusters.
 \end_layout
 
 \end_inset
@@ -1290,8 +1549,14 @@ The basic idea of border following algorithm is simple.
 \end_inset
 
 -means clustering.
- The border following algorithm as illustrated in figure ][ sees th component
- as 1 and background as 0.
+ The border following algorithm as illustrated in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-simple-"
+
+\end_inset
+
+ sees th component as 1 and background as 0.
  When it moves through the pixel grid passing each pixel watching out their
  intensity (0 or 1).
  As soon as it observes a jump from O-Pixel to 1-Pixel, it memorizes the
@@ -1334,7 +1599,22 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-simple-"
 
+\end_inset
+
+The simple 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ image demonstrates the border following algorithm.
+ The yellow pixels are some object border.
+ The algorithm moves through the pixel grid looking for the jump in pixel
+ intensities.
+ It memorizes that jump and categorizes them to respective objects according
+ to their spacial location.
 \end_layout
 
 \end_inset
@@ -1378,6 +1658,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+Final segmented image.
+ The left ventricle is indicated by green contour.
+ The original image is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:On-the-left,"
+
+\end_inset
+
 
 \end_layout
 
@@ -1432,7 +1721,28 @@ Executive Summary
 \end_layout
 
 \begin_layout Standard
-summary
+In this project we used mainly primarily K-Means algorithm inspired by 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lynch2006automatic"
+literal "false"
+
+\end_inset
+
+.
+ Alongside, a border following algorithm inspired from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "suzuki1985topological"
+literal "false"
+
+\end_inset
+
+ was used to enhance segmentation results.
+ The preproccessing was done with adaptive smoothing algorithm.
+ Finally we optimized the performance of our algorithm by repeated experiments
+ of using the algorithm with different datasets and setting the parameters
+ to optimal value.
 \end_layout
 
 \begin_layout Section
@@ -1463,7 +1773,7 @@ name "sec:Appendix-A"
 
 \end_inset
 
-
+ : Python Libraries Used
 \end_layout
 
 \end_body
