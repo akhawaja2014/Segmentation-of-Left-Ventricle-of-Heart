@@ -163,4 +163,11 @@
   year    = {1999},
 }
 
+@Book{bradski2008learning,
+  title     = {Learning OpenCV: Computer vision with the OpenCV library},
+  publisher = {" O'Reilly Media, Inc."},
+  year      = {2008},
+  author    = {Bradski, Gary and Kaehler, Adrian},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
